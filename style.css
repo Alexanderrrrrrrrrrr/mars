@@ -1,0 +1,312 @@
+@font-face {
+	font-family: "Bebas Neue Bold";
+	src: url("../fonts/bebas-neue-bold/bebas-neue-bold.eot"); /* IE9 Compat Modes */
+	src: url("../fonts/bebas-neue-bold/bebas-neue-bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("../fonts/bebas-neue-bold/bebas-neue-bold.otf") format("opentype"), /* Open Type Font */
+		url("../fonts/bebas-neue-bold/bebas-neue-bold.svg") format("svg"), /* Legacy iOS */
+		url("../fonts/bebas-neue-bold/bebas-neue-bold.ttf") format("truetype"), /* Safari, Android, iOS */
+		url("../fonts/bebas-neue-bold/bebas-neue-bold.woff") format("woff"), /* Modern Browsers */
+		url("../fonts/bebas-neue-bold/bebas-neue-bold.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+a {
+    text-decoration: none;
+    
+}
+a:hover {
+    color: #F23207; /* Цвет при наведении */
+}
+ul{
+    list-style: none;
+}
+.vizialHidden {
+display: none;
+}
+/* ____________________________двигаем фон______________________________________ */
+body {
+    background-image: url(./img/bakc.jpg);
+    max-width: 1440px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    animation: shiftBackground 2s ease-in-out forwards; 
+    z-index: 6;
+}
+
+@keyframes shiftBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100px 0; 
+    }
+}
+/* ____________________________двигаем дым______________________________________ */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./img/fog.jpg') repeat-x;
+    opacity: 0.3; /* Прозрачность дыма */
+    z-index: -1; /* Располагаем дым за фоном */
+    animation: fogAnimation 10s linear infinite; /* Анимация движения дыма */
+    
+}
+
+@keyframes fogAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+.fog-animation::before {
+    animation: fogAnimation 3s linear infinite;
+}
+/* _____________________________________________________________________________ */
+.wrapper {
+    width: 1192px;
+    margin: 0 auto;
+    padding-top: 1px;
+}
+.text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(242, 225, 194, 1);
+    text-transform: uppercase;
+}
+.text a:hover {
+    color: #F23207;
+    background-color: #5488af;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 118px;
+}
+
+.header-right {
+    display: flex;
+    gap: 26px;
+}
+
+.list{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.button {
+    background-color: #F2E1C2;
+    border-radius: 4px;
+    padding: 10px 15px;
+    color: #262526;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.button:hover {
+    background-color: #F23207;
+    color: #F2E1C2;
+}
+
+.main__text {
+    color: #F23207;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.main {
+    margin-left: 21px;
+    position: relative;
+}
+
+.dot-container {
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    
+}
+
+.dot,
+.line {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 50%;
+    position: absolute;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.dot {
+    top: -421px;
+    opacity: 0;
+}
+
+.line {
+    height: 0px;
+    width: 2px;
+    background-color: rgba(217, 217, 217, 1);
+    transform-origin: top center;
+    transition: height 0.5s ease-in-out;
+    top: -417px;
+    margin-left: 4px;
+    
+}
+
+#dot2 {
+    top: 176px;
+    opacity: 0;
+}
+/* ________________________________________________________window tikets_________________________________ */
+
+.form-section {
+    width: 1440px;
+    height: 1024px;
+    background-color: #F2E1C2;
+}
+.form-section__wrapper {
+    padding: 100px 120px 444px 120px;
+}
+.form-section__top-text {
+    color: #262526;
+    font-family: Bebas Neue, sans-serif;;
+    font-weight: 700;
+    font-size: 119px;
+    line-height: 120px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+.form-section__form {
+    display: flex;
+    gap: 20px;
+}
+.form-section__form-item {
+    width: 387px;
+    height: 72px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #262526;
+}
+input {
+    border: none;
+    background-color: #F2E1C2;
+}
+label {
+    color: #262526;
+    font-family:  Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+/* #person::placeholder,
+#chekIn::placeholder,
+#exit::placeholder {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 10px;
+    color: #262526;
+} */
+.form-section__form-button {
+    color: #F2E1C2;
+    font-family:  Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 125px;
+    background-color: #262526;
+    border-radius: 4px;
+    margin-left: auto;
+    align-self: flex-end;
+    text-transform: uppercase;
+    margin-left:810px; 
+    margin-top: 58px;
+}
+.form-section__button {
+    width: 30px;
+    height: 30px;
+    background-color: #262526;
+    z-index: 3;
+    color: #F2E1C2;
+    top: 152px;
+    right: 222px;
+    border: none;
+    font-size: 20px;
+    margin-top: 88px;
+}
+
+#formSection {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#formSection.visible {
+    display: flex;
+    background-color: #F2E1C2;
+}
+.form-section__top {
+    display: flex;
+    justify-content: space-between;
+}
+/* ________________________________делаем буквы марс__________________________ */
+
+.main__img {
+    position: relative;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    width: 1194px;
+    height: 746px;
+    inset: 0;
+    color: #fff;
+    mix-blend-mode: multiply;
+    
+}
+.letter {
+    position: absolute; /* Позиционируем буквы относительно секции */
+    color: rgba(255, 255, 255, 0.2);
+    font-family: Bebas Neue, sans-serif;;
+    font-weight: 700;
+    font-size: 715px;
+    line-height: 715px;
+    letter-spacing: -1.5%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -23px;
+    margin-top: -20px;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    z-index: 3;
+}
+video {
+    position: relative;
+}

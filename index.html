@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@400;700&family=Oranienbaum&family=Rubik:wght@400;500&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="fog-animation">
+    <div class="wrapper">
+        <header class="header">
+            <a href="#">
+                <img src="./img/Mars.svg" alt="logo">
+            </a>
+            <div class="header-right">
+                <ul class="list">
+                    <li>
+                        <a class="text" href="#">о марсе</a>
+                    </li>
+                    <li>
+                        <a class="text" href="#">процесс</a>
+                    </li>
+                    <li>
+                        <a class="text" href="#">билеты</a>
+                    </li>
+                    <li>
+                        <a class="text" href="#">новости</a>
+                    </li>
+                    <li>
+                        <a class="text" href="#">контакты</a>
+                    </li>
+                </ul>
+                <div>
+                    <button class="button">купить билеты</button>
+                </div>
+            </div>
+        </header>
+        <section class="main">
+            <h1 class="vizialHidden">главная странца</h1>
+            <div class="dot-container">
+                <div class="dot" id="dot1"></div>
+                <div class="line" id="line"></div>
+                <div class="dot" id="dot2"></div>
+            </div>
+            <div class="content">
+                <p class="main__text">точка назначения:</p>
+                <div class="main__img">
+                    <span class="letter">Марс</span>
+                    <video  src="./video/Mars.m4v" preload="auto" loop autoplay muted></video>
+                </div>
+            </div>
+        </section>
+        <section class="form-section" id="formSection">
+            <div class="form-section__wrapper">
+                <div class="form-section__top">
+                    <h2 class="form-section__top-text">Бронирование<br>
+                        билетов</h2>
+                    <button class="form-section__button" id="closeFormButton">x</button>
+                </div>
+                <form id="bookingForm">
+                    <div class="form-section__form">
+                        <div class="form-section__form-item">
+                            <label for="chekIn">Дата заезда</label>
+                            <input type="text" id="chekIn" placeholder="13.05.2022" name="chekIn" required>
+                        </div>
+                        <div class="form-section__form-item">
+                            <label for="exit">Дата выезда</label>
+                            <input type="text" id="exit" placeholder="13.05.2032" name="exit" required>
+                        </div>
+                        <div class="form-section__form-item">
+                            <label for="person">Количество</label>
+                            <input type="text" id="person" placeholder="1 человек" name="person">
+                        </div>
+                    </div>
+                    <button class="form-section__form-button" type="submit">Купить билет</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
