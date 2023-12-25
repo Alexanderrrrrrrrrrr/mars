@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const numberOfPersons = document.getElementById('person').value;
 
         alert(`Хорошего полета! 
-               Дата вылета: ${checkInDate} 
-               Дата прибытия: ${exitDate} 
-               Количество человек: ${numberOfPersons}`);
+            Дата вылета: ${checkInDate} 
+            Дата прибытия: ${exitDate} 
+            Количество человек: ${numberOfPersons}`);
     });
     
     const text = document.querySelector('.main__text')
